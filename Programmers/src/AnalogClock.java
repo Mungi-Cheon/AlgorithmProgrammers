@@ -65,10 +65,10 @@ public class AnalogClock {
         }
         while (true) {
             // 시간 증가
-            tmp_S = (plus_S) % 60; // 60초인 경우 tmp_S는 0, 그외의 경우 1~59
+            tmp_S = (plus_S + 1) % 60; // 60초인 경우 tmp_S는 0, 그외의 경우 1~59
             tmp_M = (plus_M + (plus_S + 1) / 60) % 60; // 60분인 경우 tmp_M은 0, 그외의 경우 1~59
             tmp_H = (plus_H + (plus_M + (plus_S + 1) / 60) / 60) % 24; // 24시인 경우 0, 그외의 경우 1~23
-
+            System.out.println(tmp_H + ":"+tmp_M+":"+tmp_S);
             // 시간이 증가한 만큼 각도 계산
             tmpAnglesMap = getAngles(tmp_H, tmp_M, tmp_S);
             tmp_angleH = tmpAnglesMap.get("h");
