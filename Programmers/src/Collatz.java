@@ -3,9 +3,6 @@ import java.util.Scanner;
 public class Collatz {
     public int solution(long num) {
         int answer = 0;
-        if(num == 1){
-            return 0;
-        }
 
         while(num != 1){
             if(num % 2 == 0){
@@ -16,11 +13,7 @@ public class Collatz {
             answer++;
         }
 
-        if(answer >= 500){
-            return -1;
-        }
-
-        return answer;
+        return answer >= 500? -1 : answer;
     }
 
     public static void main(String[] args) {
