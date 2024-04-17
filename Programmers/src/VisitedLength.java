@@ -19,9 +19,9 @@ public class VisitedLength {
             }else{
                 nextCol = curCol - 1;
             }
-            // if(isValid(visited,nextRow,nextCol,direction)){
+
             if(isValid(visited,curRow, curCol, nextRow,nextCol) && 
-            isDuplicate(visited, curRow, curCol, nextRow, nextCol)){
+            isVisited(visited, curRow, curCol, nextRow, nextCol)){
                 visited[nextRow][nextCol][curRow][curCol] = true;
                 visited[curRow][curCol][nextRow][nextCol] = true;                
                 answer++;
@@ -36,17 +36,13 @@ public class VisitedLength {
         return answer;
     }
 
-    private boolean isDuplicate(boolean[][][][]visited, int curRow, int curCol, int nextRow, int nextCol){
+    private boolean isVisited(boolean[][][][]visited, int curRow, int curCol, int nextRow, int nextCol){
         return !visited[curRow][curCol][nextRow][nextCol] && !visited[nextRow][nextCol][curRow][curCol];
     }
 
     private boolean isValid(boolean[][][][]visited, int curRow, int curCol, int nextRow, int nextCol){
         return nextRow >= 0 && nextRow < visited.length && nextCol >= 0 && nextCol < visited[0].length;
-    }
-
-    // private boolean isValid(boolean[][][][] visited, int nextRow, int nextCol, int direction){
-    //     return nextRow >= 0 && nextRow < visited.length && nextCol >= 0 && nextCol < visited[0].length && !visited[nextRow][nextCol][direction];
-    // }
+    } 
 
     public static void main(String[] args) {
         // String dirs="ULURRDLLU";
