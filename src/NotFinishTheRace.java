@@ -16,17 +16,25 @@ public class NotFinishTheRace {
             playerMap.put(player, playerMap.get(player) -1);
         }
 
-        Iterator<String> ite = playerMap.keySet().iterator();
-        while (ite.hasNext()) {
-            String player = ite.next();
+        return playerMap.entrySet()
+            .stream()
+            .filter(entry -> entry.getValue() != 0)
+            .findFirst()
+            .orElseThrow()
+            .getKey();
 
-            if(playerMap.get(player) != 0){
-                answer = player;
-                break;
-            }
-        }
 
-        return answer;
+        // Iterator<String> ite = playerMap.keySet().iterator();
+        // while (ite.hasNext()) {
+        //     String player = ite.next();
+
+        //     if(playerMap.get(player) != 0){
+        //         answer = player;
+        //         break;
+        //     }
+        // }
+
+        // return answer;
     }
     
     public static void main(String[] args) {
