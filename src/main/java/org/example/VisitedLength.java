@@ -1,3 +1,5 @@
+package org.example;
+
 public class VisitedLength {
 
     public int solution(String dirs) {

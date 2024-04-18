@@ -1,3 +1,5 @@
+package org.example;
+
 public class SmallestRectangle {
     public int solution(int[][] sizes) {
         int answer = 0;

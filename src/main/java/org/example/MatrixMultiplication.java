@@ -1,3 +1,5 @@
+package org.example;
+
 public class MatrixMultiplication {
 
     public int[][] solution(int[][] arr1, int[][] arr2) {    
